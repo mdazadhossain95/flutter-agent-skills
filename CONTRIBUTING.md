@@ -1,47 +1,112 @@
-# Contributing to Flutter Skills
+# Contributing to Flutter Agent Skills
 
-We'd love to accept your patches and contributions to this project.
+We'd love to accept your patches and contributions to this project. This repository extends the official [Flutter Skills](https://github.com/flutter/skills) with custom, MIT-licensed skills designed for AI agent workflows.
 
 ## Before you begin
 
-### Sign our Contributor License Agreement
+### Code of Conduct
 
-Contributions to this project must be accompanied by a
-[Contributor License Agreement](https://cla.developers.google.com/about) (CLA).
+Please follow our [Code of Conduct](CODE_OF_CONDUCT.md) in all interactions.
 
-You (or your employer) retain the copyright to your contribution; this simply gives us permission to use and redistribute your contributions as part of the project.
+### Community guidelines
 
-If you or your current employer have already signed the Google CLA (even if it was for a different project), you probably don't need to do it again.
-
-Visit <https://cla.developers.google.com/> to see your current agreements or to sign a new one.
-
-### Review our community guidelines
-
-Please follow
-[Flutter contributor guidelines](https://github.com/flutter/flutter/blob/master/CONTRIBUTING.md).
+This project values inclusivity, professionalism, and constructive collaboration. All contributors should:
+- Be respectful and considerate in discussions
+- Provide clear, actionable feedback
+- Test changes before submission
+- Document your work
 
 ## Contribution process
 
 ### Code reviews
 
-All submissions, including submissions by project members, require review. We
-use GitHub pull requests for this purpose. Consult
-[GitHub Help](https://help.github.com/articles/about-pull-requests/) for more
-information on using pull requests.
+All submissions, including submissions by project members, require review. We use GitHub pull requests for this purpose. Consult [GitHub Help](https://help.github.com/articles/about-pull-requests/) for more information on using pull requests.
 
 ## Adding a New Skill
 
-To add a new skill to the repository, follow these steps. Note that both generation and validation require the `GEMINI_API_KEY` environment variable to be set.
+To add a new custom skill to this repository, follow these steps:
 
-1. **Define the Skill**: Add a new entry to the `resources/flutter_skills.yaml` file. Follow the style of existing entries (use short descriptions and summarized instructions).
-2. **Generate the Skill**: Run the generation tool from the repository root:
-   ```bash
-   dart run tool/generator/bin/skills.dart generate-skill --skill <skill-name> -d tool/dart_skills_lint/skills resources/flutter_skills.yaml
-   ```
-3. **Validate the Skill**: Run the validation tool to ensure it meets the standards:
-   ```bash
-   dart run tool/generator/bin/skills.dart validate-skill --skill <skill-name> -d tool/dart_skills_lint/skills resources/flutter_skills.yaml
-   ```
+### 1. Create the skill folder and file
+
+```bash
+mkdir -p skills/flutter-your-skill-name
+touch skills/flutter-your-skill-name/SKILL.md
+```
+
+### 2. Write the SKILL.md file
+
+Follow the skill specification with YAML frontmatter:
+
+```yaml
+---
+name: flutter-your-skill-name
+description: Brief description of what this skill does. Use when... (50-100 words)
+instructions: |
+  Detailed step-by-step instructions for how to use this skill.
+  Can span multiple paragraphs.
+resources:
+  - https://link-to-documentation-1
+  - https://link-to-documentation-2
+---
+
+# Optional markdown body content (if instructions need structure)
+Additional guidance, examples, or use cases.
+```
+
+**Requirements:**
+- Skill name must start with `flutter-` and use kebab-case (lowercase, hyphens)
+- Description required (brief, action-oriented)
+- Instructions required (clear, actionable)
+- Resources required (at least one reference link)
+
+### 3. Register the skill in config
+
+Add an entry to `resources/flutter_agent_skills.yaml`:
+
+```yaml
+- name: flutter-your-skill-name
+  description: Your skill description
+  instructions: |
+    Your instructions from SKILL.md
+  resources:
+    - https://link-to-documentation
+```
+
+### 4. Validate the skill
+
+Run the linter to ensure your skill meets standards:
+
+```bash
+cd tool/dart_skills_lint
+dart run bin/cli.dart --skills-directory ../../skills
+cd ../..
+```
+
+The skill must pass all checks:
+- Naming convention (flutter-* kebab-case)
+- Metadata validation (name, description, instructions, resources present)
+- File structure (SKILL.md exists)
+
+### 5. Update README.md
+
+Add your skill to the appropriate table in [README.md](README.md):
+
+- **Official Skills**: 22 official Flutter skills (BSD-3-Clause licensed) - do not add here
+- **Extended Skills**: Custom skills (MIT-licensed) - add your new skill here
+
+### 6. Test and submit
+
+```bash
+# Create a feature branch
+git checkout -b feature/add-flutter-your-skill-name
+
+# Commit your changes
+git add -A
+git commit -m "feat: add flutter-your-skill-name skill"
+
+# Push and create a PR
+git push -u origin feature/add-flutter-your-skill-name
+```
 
 ## Issue triage
 
