@@ -45,8 +45,8 @@ instructions: |
   Detailed step-by-step instructions for how to use this skill.
   Can span multiple paragraphs.
 resources:
-  - https://link-to-documentation-1
-  - https://link-to-documentation-2
+  - https://docs.flutter.dev/app-architecture
+  - https://docs.flutter.dev/cookbook
 ---
 
 # Optional markdown body content (if instructions need structure)
@@ -69,7 +69,7 @@ Add an entry to `resources/flutter_agent_skills.yaml`:
   instructions: |
     Your instructions from SKILL.md
   resources:
-    - https://link-to-documentation
+    - https://docs.flutter.dev/app-architecture
 ```
 
 ### 4. Validate the skill
