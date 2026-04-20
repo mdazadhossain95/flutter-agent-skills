@@ -4,7 +4,7 @@
 
 # This is the configuration file for the skill generator.
 # To generate skills, use the following command (from the `tool` directory):
-# dart run skills generate-skill --config ../resources/flutter_skills.yaml --output ../skills
+# dart run skills generate-skill --config ../resources/flutter_agent_skills.yaml --output ../skills
 
 - name: flutter-setting-up-on-linux
   description: Sets up a Linux environment for Flutter development. Use when configuring a Linux machine to run, build, or deploy Flutter applications.
@@ -1442,3 +1442,88 @@
   resources:
     - https://codelabs.developers.google.com/flutter-home-screen-widgets#0
     - https://pub.dev/packages/home_widget
+- name: flutter-project-bootstrap
+  description: Scaffolds a Flutter app structure from developer requirements. Supports a guided questionnaire and a quick default mode, then generates architecture, dependencies, starter files, and 1-2 sample screens.
+  instructions: |
+    Use this skill to initialize a new Flutter project according to developer
+    requirements. Start by asking whether to run in Guided setup mode or Quick
+    default mode.
+
+    In Guided mode, ask for app type, primary state management, optional
+    secondary state management, architecture style, backend strategy, API usage,
+    authentication choices, push notification provider, local persistence,
+    realtime needs, payments, target platforms, flavors, and starter screen
+    preferences.
+
+    In Quick default mode, skip the full interview and apply a baseline profile:
+    ecommerce starter, feature-first clean architecture, Riverpod as primary
+    state management, REST API readiness, Firebase Cloud Messaging readiness,
+    email/password auth scaffold, shared preferences plus secure storage,
+    Android and iOS targets, dev/prod flavors, and two starter screens.
+
+    If multiple state management options are selected, enforce one primary
+    option and isolate other patterns by module. Do not mix patterns in the
+    same feature.
+
+    Generate a starter structure with core, config, shared, features, data,
+    domain, presentation, and routing layers. Add only required dependencies,
+    create 1-2 starter screens, and output a summary of selected options,
+    generated artifacts, package groups, and next steps.
+  resources:
+    - https://docs.flutter.dev/app-architecture
+    - https://docs.flutter.dev/app-architecture/recommendations
+    - https://docs.flutter.dev/app-architecture/design-patterns
+    - https://docs.flutter.dev/get-started/fundamentals/state-management
+    - https://docs.flutter.dev/data-and-backend/networking
+    - https://docs.flutter.dev/ui/navigation
+    - https://docs.flutter.dev/cookbook
+    - https://docs.flutter.dev/deployment
+- name: flutter-explain-codebase
+  description: Explains a Flutter project codebase in a structured, developer-friendly way, including architecture, state management, data flow, navigation, dependencies, risks, and prioritized next actions.
+  instructions: |
+    Use this skill to analyze and explain an existing Flutter codebase for
+    onboarding, handoff, debugging, and planning refactors.
+
+    First establish scope and depth: whole project or selected module/files,
+    plus quick/standard/deep explanation level.
+
+    Explain in order: project map, architecture style, state management usage,
+    navigation flow, data and integration flow, dependency purpose, risks, and
+    prioritized next steps.
+
+    Prefer concrete findings from code over assumptions. If evidence is not
+    available, state assumptions clearly.
+
+    Output should be concise but actionable, with references to observed
+    modules and clear improvement opportunities.
+  resources:
+    - https://docs.flutter.dev/app-architecture
+    - https://docs.flutter.dev/app-architecture/recommendations
+    - https://docs.flutter.dev/resources/architectural-overview
+    - https://docs.flutter.dev/data-and-backend/state-mgmt
+    - https://docs.flutter.dev/ui/navigation
+    - https://docs.flutter.dev/testing/overview
+- name: flutter-optimize-codebase
+  description: Optimizes a Flutter codebase for performance, maintainability, architecture quality, and release readiness using a prioritized, evidence-driven improvement plan.
+  instructions: |
+    Use this skill to optimize an existing Flutter codebase with an
+    evidence-based and prioritized approach.
+
+    Begin by confirming scope (whole project or module), optimization target
+    (performance, architecture, quality, size, reliability), and mode
+    (quick/standard/deep).
+
+    Analyze in order: hotspots and baseline, architecture boundaries, state
+    management efficiency, UI/rendering performance, network/caching patterns,
+    reliability/error handling, app size, and testing gaps.
+
+    Return recommendations in priority order with risk levels (low/medium/high),
+    expected impact, and concrete verification steps.
+  resources:
+    - https://docs.flutter.dev/perf
+    - https://docs.flutter.dev/perf/best-practices
+    - https://docs.flutter.dev/perf/ui-performance
+    - https://docs.flutter.dev/perf/app-size
+    - https://docs.flutter.dev/app-architecture/recommendations
+    - https://docs.flutter.dev/testing/overview
+    - https://docs.flutter.dev/tools/devtools/performance

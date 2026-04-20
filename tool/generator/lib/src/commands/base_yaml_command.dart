@@ -34,7 +34,7 @@ abstract class BaseYamlCommand extends Command<void> {
   Future<void> run() async {
     final inputFile = argResults!.rest.isNotEmpty
         ? argResults!.rest.first
-        : 'resources/flutter_skills.yaml';
+        : 'resources/flutter_agent_skills.yaml';
 
     final file = File(inputFile);
     if (!file.existsSync()) {

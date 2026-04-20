@@ -84,13 +84,13 @@ void main() {
           );
         });
 
-        if (p.basename(file.path) == 'flutter_skills.yaml') {
+        if (p.basename(file.path) == 'flutter_agent_skills.yaml') {
           test('name starting with "flutter-"', () {
             expect(
               name,
               startsWith('flutter-'),
               reason:
-                  'All skills in flutter_skills.yaml must start with "flutter-"',
+                  'All skills in flutter_agent_skills.yaml must start with "flutter-"',
             );
           });
 
@@ -105,7 +105,7 @@ void main() {
               description,
               contains('Flutter'),
               reason:
-                  'All skills in flutter_skills.yaml must contain "Flutter" in their description',
+                  'All skills in flutter_agent_skills.yaml must contain "Flutter" in their description',
             );
           });
         } else if (p.basename(file.path) == 'dart_skills.yaml') {

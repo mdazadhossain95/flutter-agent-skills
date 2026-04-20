@@ -1,26 +1,79 @@
-# Agent Skills for Flutter
+# Flutter Agent Skills
 
-**NOTE: This repository is currently in development and is not yet ready for use.**
+The most complete Flutter agent skill set for AI coding assistants.
+Covers every app type, stack, state management, backend, and technology
+a Flutter developer needs — for any app, any platform, any stack.
 
-This repository contains agent skills for Flutter.
+Built and maintained by [Md Azad Hossain Tutul](https://github.com/mdazadhossain95) —
+Flutter developer with 5+ years of experience and 200+ apps shipped.
 
 ## Installation
 
-To install the skills into your project, run the following command:
+To install all skills into your project, run:
 
 ```bash
-npx skills add flutter/skills
+npx skills add mdazadhossain95/flutter-agent-skills
 ```
 
 ## Updating Skills
 
-To update, run the following command:
-
 ```bash
-npx skills update flutter/skills
+npx skills update mdazadhossain95/flutter-agent-skills
 ```
 
+## How To Use Skills
+
+After installing, ask your AI coding assistant for a specific task in natural language. The assistant will match your request to the right skill.
+
+### Quick Start
+
+1. Open your Flutter project in your AI-enabled editor.
+2. Install skills:
+
+```bash
+npx skills add mdazadhossain95/flutter-agent-skills
+```
+
+3. Ask for what you want to build.
+
+### Example Prompts
+
+- "Set up Flutter app architecture with UI, logic, and data layers."
+- "Create a Flutter form with validation and error messages."
+- "Implement deep-linking navigation for a Flutter app."
+- "Add local database support and repository pattern in Flutter."
+- "Use flutter-project-bootstrap and scaffold an ecommerce starter app."
+
+### Using The Bootstrap Skill
+
+Use [flutter-project-bootstrap](skills/flutter-project-bootstrap/SKILL.md) when you want fast project scaffolding.
+
+The bootstrap flow supports:
+
+- Guided mode: asks questions (app type, state management, backend, push, auth, etc.) and scaffolds from your answers.
+- Quick default mode: skips questions and generates a recommended starter stack.
+
+Example bootstrap prompts:
+
+- "Run flutter-project-bootstrap in guided mode."
+- "Run flutter-project-bootstrap in quick mode for an ecommerce app."
+- "Bootstrap a rider app with Bloc, REST API, and Firebase push notifications."
+
+### Best Practice
+
+- Start with one clear request.
+- Confirm generated structure before adding advanced features.
+- Add new features step-by-step (auth, payments, realtime, analytics).
+- Re-run update periodically to keep skills current.
+
+---
+
 ## Available Skills
+
+### 📦 Official Flutter Skills
+
+> Originally from [flutter/skills](https://github.com/flutter/skills) by the Flutter team.
+> Copyright 2026 The Flutter Authors. Licensed under [BSD-3-Clause](LICENSE-flutter-skills).
 
 | Skill | Description |
 |---|---|
@@ -46,11 +99,42 @@ npx skills update flutter/skills
 | [flutter-testing-apps](skills/flutter-testing-apps/SKILL.md) | Implements unit, widget, and integration tests for a Flutter app. Use when ensuring code quality and preventing regressions through automated testing. |
 | [flutter-theming-apps](skills/flutter-theming-apps/SKILL.md) | Customizes the visual appearance of a Flutter app using the theming system. Use when defining global styles, colors, or typography for an application. |
 | [flutter-working-with-databases](skills/flutter-working-with-databases/SKILL.md) | Manages local data persistence using SQLite or other database solutions. Use when a Flutter app needs to store, query, or synchronize large amounts of structured data on the device. |
+
+---
+
+### 🚀 Extended Skills
+
+> Created and maintained by [Md Azad Hossain Tutul](https://github.com/mdazadhossain95).
+> Licensed under [MIT](LICENSE).
+
+| Skill | Description |
+|---|---|
+| [flutter-project-bootstrap](skills/flutter-project-bootstrap/SKILL.md) | Scaffolds a Flutter app structure from developer requirements. Supports a guided questionnaire and a quick default mode, then generates architecture, dependencies, starter files, and 1-2 sample screens. |
+| [flutter-explain-codebase](skills/flutter-explain-codebase/SKILL.md) | Explains a Flutter project codebase in a structured, developer-friendly way, including architecture, state management, data flow, navigation, dependencies, risks, and prioritized next actions. |
+| [flutter-optimize-codebase](skills/flutter-optimize-codebase/SKILL.md) | Optimizes a Flutter codebase for performance, maintainability, architecture quality, and release readiness using a prioritized, evidence-driven improvement plan. |
+
+---
+
 ## Contributing
 
-To contribute skills, see the instructions in [tool/generator/README.md](tool/generator/README.md).
+Have an idea for a new skill? Found a bug or improvement?
 
-Please see [CONTRIBUTING.md](CONTRIBUTING.md) for more information.
+Please see [CONTRIBUTING.md](CONTRIBUTING.md) for how to contribute.
+
+New skills are added based on:
+- Real developer needs and questions
+- New popular Flutter packages
+- New app types and use cases
+- Community requests via GitHub Issues
+
+---
+
+## Licenses
+
+- **Extended skills** (created by this repo) → [MIT License](LICENSE) — Copyright 2026 Md Azad Hossain Tutul
+- **Official Flutter skills** → [BSD-3-Clause License](LICENSE-flutter-skills) — Copyright 2026 The Flutter Authors
+
+---
 
 ## Code of Conduct
 

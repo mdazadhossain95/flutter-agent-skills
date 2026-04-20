@@ -13,8 +13,8 @@ This tool requires the `GEMINI_API_KEY` environment variable to be set.
 ## Commands
 
 > [!NOTE]
-> To use the default configuration file path (`resources/flutter_skills.yaml`), commands should be run from the root of the repository as: `dart run tool/generator/bin/skills.dart <command>`.
-> Alternatively, if running from this directory, specify the path to the configuration file explicitly (e.g., `../../resources/flutter_skills.yaml`).
+> To use the default configuration file path (`resources/flutter_agent_skills.yaml`), commands should be run from the root of the repository as: `dart run tool/generator/bin/skills.dart <command>`.
+> Alternatively, if running from this directory, specify the path to the configuration file explicitly (e.g., `../../resources/flutter_agent_skills.yaml`).
 
 ### `generate-skill`
 
@@ -26,7 +26,7 @@ dart run skills generate-skill [options] [config_file]
 ```
 
 **Arguments:**
-*   `[config_file]`: Path to the YAML configuration file. Defaults to `resources/flutter_skills.yaml`.
+*   `[config_file]`: Path to the YAML configuration file. Defaults to `resources/flutter_agent_skills.yaml`.
 
 **Options:**
 *   `--skill`: Filter to generate only the specified skill by name.
@@ -34,7 +34,7 @@ dart run skills generate-skill [options] [config_file]
 *   `--dry-run`: Performs a dry run, showing what would be generated and token count without writing files.
 
 **Example:**
-Generate all skills defined in resources/flutter_skills.yaml to the skills/ directory:
+Generate all skills defined in resources/flutter_agent_skills.yaml to the skills/ directory:
 
 ```bash
 dart run skills generate-skill
@@ -56,7 +56,7 @@ dart run skills update-skill [options] [config_file]
 ```
 
 **Arguments:**
-*   `[config_file]`: Path to the YAML configuration file. Defaults to `resources/flutter_skills.yaml`.
+*   `[config_file]`: Path to the YAML configuration file. Defaults to `resources/flutter_agent_skills.yaml`.
 
 **Options:**
 *   `--skill`: Filter to update only the specified skill by name.
@@ -64,7 +64,7 @@ dart run skills update-skill [options] [config_file]
 *   `--thinking-budget`: The token budget for the model to "think" before generating content. Defaults to 2048.
 
 **Example:**
-Update all skills defined in resources/flutter_skills.yaml:
+Update all skills defined in resources/flutter_agent_skills.yaml:
 
 ```bash
 dart run skills update-skill
@@ -86,7 +86,7 @@ dart run skills validate-skill [options] [config_file]
 ```
 
 **Arguments:**
-*   `[config_file]`: Path to the YAML configuration file. Defaults to `resources/flutter_skills.yaml`.
+*   `[config_file]`: Path to the YAML configuration file. Defaults to `resources/flutter_agent_skills.yaml`.
 
 **Options:**
 *   `--skill`: Validate only the specified skill by name.
@@ -116,7 +116,7 @@ dart run skills update-readme [config_file] [readme_file]
 ```
 
 **Arguments:**
-*   `[config_file]`: Path to the YAML configuration file. Defaults to `resources/flutter_skills.yaml`.
+*   `[config_file]`: Path to the YAML configuration file. Defaults to `resources/flutter_agent_skills.yaml`.
 *   `[readme_file]`: Path to the README.md file to update. Defaults to `../README.md`.
 
 **Example:**
@@ -128,7 +128,7 @@ dart run skills update-readme
 
 ## Configuration
 
-The default configuration file is located at `resources/flutter_skills.yaml`. It contains a list of skill definitions:
+The default configuration file is located at `resources/flutter_agent_skills.yaml`. It contains a list of skill definitions:
 
 ```yaml
 - name: flutter-layout
